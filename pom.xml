@@ -14,6 +14,7 @@
         <module>mall-product</module>
         <module>mall-ware</module>
         <module>mall-common</module>
+        <module>mall-gateway</module>
     </modules>
     <name>guli-mall</name>
     <description>parent</description>
@@ -24,6 +25,7 @@
         <mall.version>0.0.1-SNAPSHOT</mall.version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <lombok.version>1.18.18</lombok.version>
         <mybatis-plus.version>3.4.2</mybatis-plus.version>
         <mysql.version>8.0.23</mysql.version>
         <http.components.version>4.4.13</http.components.version>
@@ -74,7 +76,13 @@
             </dependency>
 
             <dependency>
-                <groupId>com.zsy</groupId>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xixi</groupId>
                 <artifactId>mall-common</artifactId>
                 <version>${mall.version}</version>
             </dependency>

@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      routes: # 路由配置
+        - id: product_router
+          uri: lb://MALL-PRODUCT
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+
+
+        - id: renre-fast
+          uri: lb://RENREN-FAST
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
